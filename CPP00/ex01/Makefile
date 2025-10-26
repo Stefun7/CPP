@@ -17,11 +17,11 @@ RM = rm -rf
 
 all : $(NAME)
 
-$(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean :
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
 fclean : clean
 	$(RM) $(NAME)

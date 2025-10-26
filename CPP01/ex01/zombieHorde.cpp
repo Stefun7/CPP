@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/26 13:29:31 by scesar            #+#    #+#             */
-/*   Updated: 2025/10/26 16:09:42 by scesar           ###   ########.fr       */
+/*   Created: 2025/10/26 16:15:45 by scesar            #+#    #+#             */
+/*   Updated: 2025/10/26 18:22:55 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Zombie.hpp"
+#include "Zombie.hpp"
 
-int	main(void){
-	Zombie *on_heap = newZombie("Bob");
-	if(!on_heap)
-		return 1;
-	Zombie on_stack = Zombie("Patrick");
-	randomChump("Sandy");
+Zombie* zombieHorde(int N, std::string name){
+	if(N <= 0)
+		return NULL;
 
-	on_heap->announce();
-	delete(on_heap);
+	Zombie *Horde = new (std::nothrow) Zombie[N];
+	if(!Horde)
+		return NULL;
 
-	on_stack.announce();
-	return 0;
+	for(int i = 0; i < N; i++)
+		Horde[i].setName(name);
+
+	return Horde;
 }
