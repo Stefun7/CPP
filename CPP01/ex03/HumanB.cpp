@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 19:53:44 by stephen           #+#    #+#             */
-/*   Updated: 2025/10/27 20:13:02 by stephen          ###   ########.fr       */
+/*   Updated: 2025/10/28 11:32:15 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ HumanB::~HumanB(){
 }
 
 void	HumanB::attack(){
-	if(this->_W.getType())
-	std::cout << this->_name << "Smashed the annemy head with a "
-				<< this->_W.getType() << std::endl;
+	if(this->_W.getType().empty())
+		std::cout << this->_name << "Smashed the annemy head with his bare hands"<< std::endl;
+	else
+		std::cout << this->_name << "Smashed the annemy head with a "
+					<< this->_W.getType() << std::endl;
 }
