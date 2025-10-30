@@ -6,9 +6,9 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = newZombie.cpp randomChump.cpp Zombie.cpp main.cpp
 
-OBJS = $(SRC:.cpp=.o)
-
 INC = Zombie.hpp
+
+OBJS = $(SRC:.cpp=.o)
 
 RM = rm -rf
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 10:25:51 by stephen           #+#    #+#             */
-/*   Updated: 2025/10/27 20:03:17 by stephen          ###   ########.fr       */
+/*   Updated: 2025/10/30 20:25:41 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 class Weapon{
 public:
+	Weapon(const std::string type);
 	Weapon();
 	~Weapon();
 

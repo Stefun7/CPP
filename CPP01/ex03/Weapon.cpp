@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 19:04:40 by stephen           #+#    #+#             */
-/*   Updated: 2025/10/27 20:06:20 by stephen          ###   ########.fr       */
+/*   Updated: 2025/10/30 20:41:55 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(){
+Weapon::Weapon(const std::string type): _type(type){
+}
+
+Weapon::Weapon(): _type(NULL){
 }
 
 Weapon::~Weapon(){
