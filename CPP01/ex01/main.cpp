@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/26 16:15:45 by scesar            #+#    #+#             */
-/*   Updated: 2025/11/05 15:33:17 by stephen          ###   ########.fr       */
+/*   Created: 2025/11/05 15:15:58 by stephen           #+#    #+#             */
+/*   Updated: 2025/11/05 15:39:27 by stephen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* zombieHorde(int N, std::string name){
-	if(N <= 0)
-		return NULL;
+int	main(void){
 
-	Zombie *Horde = new (std::nothrow) Zombie[N];
-	if(!Horde)
-		return NULL;
+	int N = 7;
+	Zombie *H = zombieHorde(N, "Mr. Meeseeks");
 
-	for(int i = 0; i < N; i++)
-		Horde[i].setName(name);
+	for(int i = 0; i < N; i++){
+		H[i].announce();
+	}
 
-	return Horde;
+	delete[] H;
+	return 0;
 }
