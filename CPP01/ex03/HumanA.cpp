@@ -6,7 +6,7 @@
 /*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 19:24:52 by stephen           #+#    #+#             */
-/*   Updated: 2025/10/30 20:40:35 by scesar           ###   ########.fr       */
+/*   Updated: 2026/01/05 18:36:56 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ HumanA::~HumanA(){
 }
 
 void	HumanA::attack(){
-	std::cout << this->_name << " smashed the annemy head with a "
+	std::cout << this->_name << " smashed the enemy head with "
 				<< this->_W.getType() << std::endl;
 }

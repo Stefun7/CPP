@@ -1,4 +1,4 @@
-NAME = zombie
+NAME = adress_and_ref
 
 CXX = c++
 

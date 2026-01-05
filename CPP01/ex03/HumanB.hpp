@@ -6,7 +6,7 @@
 /*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 10:50:59 by stephen           #+#    #+#             */
-/*   Updated: 2025/10/30 20:51:34 by scesar           ###   ########.fr       */
+/*   Updated: 2026/01/05 18:33:20 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 class HumanB{
 public:
-	HumanB(std::string name);
 	HumanB();
+	HumanB(std::string name);
 	~HumanB();
 
 	void	attack();
