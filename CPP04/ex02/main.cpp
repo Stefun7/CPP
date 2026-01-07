@@ -6,7 +6,7 @@
 /*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 21:31:21 by stephen           #+#    #+#             */
-/*   Updated: 2026/01/07 17:07:16 by stephen          ###   ########.fr       */
+/*   Updated: 2026/01/07 17:16:41 by stephen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main()
 	std::cout << "---- POLYMORPHISM TEST ----" << std::endl;
 	const Animal* a = new Dog();
 	const Animal* b = new Cat();
+	// const Animal c;
 
 	a->makeSound();
 	b->makeSound();

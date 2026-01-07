@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 19:24:41 by stephen           #+#    #+#             */
-/*   Updated: 2026/01/07 09:44:03 by stephen          ###   ########.fr       */
+/*   Created: 2026/01/07 01:12:19 by stephen           #+#    #+#             */
+/*   Updated: 2026/01/07 01:43:12 by stephen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
-#include <iostream>
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-class Fixed{
+# include <string>
+# include <iostream>
+
+class Brain{
 public:
-	Fixed();
-	Fixed(const Fixed &cpyFixed);
-	~Fixed();
+	Brain();
+	Brain(const Brain &B);
+	~Brain();
 
-	Fixed&	operator=(const Fixed &fixed);
+	Brain &operator=(const Brain &B);
 
-	void setRawBits( int const raw );
+//getter
+	std::string getIdea(unsigned int index) const;
 
-	int getRawBits( void ) const;
+//setter
+	void setIdea(unsigned int index, std::string idea);
 
 private:
-	int	_val;
-	static const int	_bits = 8;
-	// int _id;
+	std::string _ideas[100];
 };
 
 #endif

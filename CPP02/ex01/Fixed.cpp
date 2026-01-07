@@ -6,7 +6,7 @@
 /*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 22:46:43 by stephen           #+#    #+#             */
-/*   Updated: 2025/11/20 00:04:44 by stephen          ###   ########.fr       */
+/*   Updated: 2026/01/07 09:30:18 by stephen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,3 @@ int	Fixed::toInt(void) const{
 float	Fixed::toFloat(void) const{
 	return static_cast<float>(this->_val) / (1 << _bits);
 }
-

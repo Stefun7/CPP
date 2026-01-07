@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 19:24:41 by stephen           #+#    #+#             */
-/*   Updated: 2026/01/07 09:44:03 by stephen          ###   ########.fr       */
+/*   Created: 2026/01/06 21:01:45 by stephen           #+#    #+#             */
+/*   Updated: 2026/01/06 21:01:49 by stephen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
-#include <iostream>
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
+# include <iostream>
 
-class Fixed{
+class WrongAnimal{
 public:
-	Fixed();
-	Fixed(const Fixed &cpyFixed);
-	~Fixed();
+	WrongAnimal();
+	WrongAnimal(const WrongAnimal &Wa);
+	virtual ~WrongAnimal();
 
-	Fixed&	operator=(const Fixed &fixed);
+	WrongAnimal& operator=(const WrongAnimal &Wa);
 
-	void setRawBits( int const raw );
+	virtual void makeSound(void) const;
+	virtual std::string getType(void) const;
 
-	int getRawBits( void ) const;
-
-private:
-	int	_val;
-	static const int	_bits = 8;
-	// int _id;
+protected:
+	std::string _type;
 };
 
 #endif
