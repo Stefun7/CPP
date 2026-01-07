@@ -2,7 +2,7 @@ NAME = fragtrap
 
 CXX = c++
 
-CXXFLAGS = #-Wall -Werror -Wextra
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 

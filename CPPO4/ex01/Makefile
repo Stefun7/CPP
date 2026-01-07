@@ -1,12 +1,12 @@
-NAME = zoo
+NAME = brain
 
 CXX = c++
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = main.cpp Animal.cpp WrongAnimal.cpp Cat.cpp Dog.cpp WrongCat.cpp
+SRC = main.cpp Animal.cpp WrongAnimal.cpp Cat.cpp Dog.cpp WrongCat.cpp Brain.cpp
 
-INC = Animal.hpp WrongAnimal.hpp Cat.hpp Dog.hpp WrongCat.hpp
+INC = Animal.hpp WrongAnimal.hpp Cat.hpp Dog.hpp WrongCat.hpp Brain.hpp
 
 OBJS = $(SRC:.cpp=.o)
 

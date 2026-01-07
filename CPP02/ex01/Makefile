@@ -2,7 +2,7 @@ NAME = fixed-point
 
 CXX = c++
 
-CXXFLAGS = -Wall -Werror -Wextra
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = main.cpp Fixed.cpp
 
