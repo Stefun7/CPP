@@ -6,13 +6,16 @@
 /*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 16:49:31 by scesar            #+#    #+#             */
-/*   Updated: 2026/02/18 15:35:02 by stephen          ###   ########.fr       */
+/*   Updated: 2026/02/06 02:46:16 by stephen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 # include <iostream>
 # include <string>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat{
 public:
@@ -29,6 +32,8 @@ public:
 
 	void UpGrade();
 	void DownGrade();
+	void signForm(Form& F);
+	//must call Form::besigned(...)
 
 	class GradeTooHighException : public std::exception {
 	public:

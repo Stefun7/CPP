@@ -5,38 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/30 14:57:48 by stephen           #+#    #+#             */
-/*   Updated: 2026/02/05 00:48:55 by stephen          ###   ########.fr       */
+/*   Created: 2026/02/20 14:10:05 by stephen           #+#    #+#             */
+/*   Updated: 2026/03/03 14:33:23 by stephen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Intern.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
-	try
-	{
-		Bureaucrat a("Alice", 2);
-		std::cout << a << std::endl;
+	Intern intern;
+	AForm* robot;
+	AForm* shrub;
+	AForm* pres;
+	AForm* unknow;
 
-		a.UpGrade();
-		std::cout << a << std::endl;
+	robot = intern.makeForm("robotomy request", "Target 1");
+	shrub = intern.makeForm("shrubbery creation", "Target 2");
+	pres = intern.makeForm("presidential pardon", "Target 3");
+	unknow = intern.makeForm("wooptidoo", "Target 4");
 
-		a.DownGrade();
-		std::cout << a << std::endl;
-	}
-	catch (std::exception& e)
-	{
-		std::cout << "Exception caught: " << e.what() << std::endl;
-	}
+	delete robot;
+	delete shrub;
+	delete pres;
+	delete unknow;
 
-	try
-	{
-		Bureaucrat b("Bob", 151);
-	}
-	catch (std::exception& e)
-	{
-		std::cout << "Exception caught: " << e.what() << std::endl;
-	}
 	return 0;
 }
+

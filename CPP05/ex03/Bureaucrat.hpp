@@ -6,18 +6,21 @@
 /*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 16:49:31 by scesar            #+#    #+#             */
-/*   Updated: 2026/02/18 15:35:02 by stephen          ###   ########.fr       */
+/*   Updated: 2026/02/18 17:51:19 by stephen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 # include <iostream>
 # include <string>
+# include "AForm.hpp"
+
+class AForm;
 
 class Bureaucrat{
 public:
 	Bureaucrat();
-	Bureaucrat(Bureaucrat &B);
+	Bureaucrat(Bureaucrat const &B);
 	Bureaucrat(std::string name);
 	Bureaucrat(std::string name, int grade);
 	~Bureaucrat();
@@ -29,6 +32,8 @@ public:
 
 	void UpGrade();
 	void DownGrade();
+	void signForm(AForm& F);
+	void executeForm(AForm const &F);
 
 	class GradeTooHighException : public std::exception {
 	public:
