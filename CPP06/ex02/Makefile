@@ -6,7 +6,7 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS = Base.cpp main.cpp
 
-INC = Base.hpp
+INC = Base.hpp A.hpp B.hpp C.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

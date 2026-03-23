@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 18:31:41 by stephen           #+#    #+#             */
-/*   Updated: 2026/03/19 18:36:12 by stephen          ###   ########.fr       */
+/*   Updated: 2026/03/23 16:24:20 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 # include <iostream>
+# include <cstdlib>
+# include <ctime>
 
 class Base{
 public:
-	~Base();
+	virtual ~Base();
 };
 
 Base *generate(void);
