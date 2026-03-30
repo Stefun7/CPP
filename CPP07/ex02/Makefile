@@ -1,4 +1,4 @@
-NAME = iter
+NAME = array
 
 CXX = c++
 
@@ -6,7 +6,7 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS = main.cpp
 
-INC = iter.hpp
+INC = Array.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
