@@ -6,7 +6,7 @@
 /*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 22:54:29 by scesar            #+#    #+#             */
-/*   Updated: 2026/03/31 22:58:19 by scesar           ###   ########.fr       */
+/*   Updated: 2026/03/31 23:07:58 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int main() {
 
 		try
 		{
-			arr[-1] = 456; // will wrap to large unsigned int
+			arr[-1] = 456;
 		}
 		catch (const std::exception &e)
 		{
