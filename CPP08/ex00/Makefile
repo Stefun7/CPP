@@ -1,4 +1,4 @@
-NAME = array
+NAME = containers
 
 CXX = c++
 
@@ -6,9 +6,9 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = main.cpp
 
-INC = Array.hpp
+INC = easyfind.hpp
 
-OBJS = $(SRC:.cpp=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 RM = rm -rf
 

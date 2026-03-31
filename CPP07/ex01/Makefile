@@ -4,11 +4,11 @@ CXX = c++
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS = main.cpp
+SRC = main.cpp
 
 INC = iter.hpp
 
-OBJS = $(SRCS:.cpp=.o)
+OBJS = $(SRC:.cpp=.o)
 
 RM = rm -rf
 
