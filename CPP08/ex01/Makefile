@@ -1,12 +1,12 @@
-NAME = containers
+NAME = vectors
 
 CXX = c++
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = main.cpp
+SRC = main.cpp Span.cpp
 
-INC = easyfind.hpp
+INC = Span.hpp
 
 OBJS = $(SRC:.cpp=.o)
 

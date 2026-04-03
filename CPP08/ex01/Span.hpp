@@ -6,7 +6,7 @@
 /*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 13:31:26 by scesar            #+#    #+#             */
-/*   Updated: 2026/04/03 19:42:49 by scesar           ###   ########.fr       */
+/*   Updated: 2026/04/03 19:49:49 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ public:
 		}
 	};
 private:
-	std::vector<int> _vec;
 	unsigned int _max_sz;
+	std::vector<int> _vec;
 	Span();
 };
