@@ -6,7 +6,7 @@
 /*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 13:31:26 by scesar            #+#    #+#             */
-/*   Updated: 2026/04/14 15:04:31 by scesar           ###   ########.fr       */
+/*   Updated: 2026/04/21 15:25:50 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ public:
 
 	template <typename it>
 	void addNumbers(it start, it end){
-	size_t dist = std::distance(start, end);
+		size_t dist = std::distance(start, end);
 
-	if(this->_vec.size() + dist > this->_max_sz)
-		throw(WillOverflow());
-	this->_vec.insert(this->_vec.end(), start, end);
-}
-	//Template functions MUST be defined in the header file because the compiler needs to see the full implementation at the moment it uses the template.
+		if(this->_vec.size() + dist > this->_max_sz)
+			throw(WillOverflow());
+		this->_vec.insert(this->_vec.end(), start, end);
+	}
+	//Template functions must be defined in the header file because the compiler needs to see the full implementation at the moment it uses the template
 
 	int shortestSpan();
 	int longestSpan();

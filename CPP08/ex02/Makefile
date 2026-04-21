@@ -1,12 +1,12 @@
-NAME = span
+NAME = stack
 
 CXX = c++
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = main.cpp Span.cpp
+SRC = main.cpp
 
-INC = Span.hpp
+INC = MutantStack.hpp
 
 OBJS = $(SRC:.cpp=.o)
 
