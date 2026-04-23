@@ -12,7 +12,7 @@ OBJS = $(SRC:.cpp=.o)
 
 RM = rm -rf
 
-%o : %.cpp $(INC)
+%.o : %.cpp $(INC)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 all : $(NAME)

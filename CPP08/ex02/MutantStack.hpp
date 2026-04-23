@@ -6,7 +6,7 @@
 /*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 17:41:08 by scesar            #+#    #+#             */
-/*   Updated: 2026/04/21 19:18:05 by scesar           ###   ########.fr       */
+/*   Updated: 2026/04/23 15:36:27 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 template <typename T>
 class MutantStack : public std::stack<T>{
 public:
-	MutantStack();
-	MutantStack(MutantStack const &M);
-	~MutantStack();
+	MutantStack() : std::stack<T>() {}
+	MutantStack(MutantStack const &M) : std::stack<T>(M) {}
+	~MutantStack() {}
 
 	const MutantStack &operator=(MutantStack const &M){
 		if(this != &M)

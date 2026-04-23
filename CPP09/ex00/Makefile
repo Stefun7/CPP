@@ -1,16 +1,16 @@
-NAME = basic
+NAME = btc
 
 CXX = c++
 
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS = main.cpp
+INC = BitcoinExchange.hpp
 
-INC = whatever.hpp
+SRCS = BitcoinExchange.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-RM = rm -rf
+RM = -rm -rf
 
 %.o : %.cpp $(INC)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
