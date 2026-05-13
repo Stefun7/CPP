@@ -6,7 +6,7 @@
 /*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 17:09:49 by scesar            #+#    #+#             */
-/*   Updated: 2026/05/12 15:03:23 by scesar           ###   ########.fr       */
+/*   Updated: 2026/05/13 14:20:45 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,20 @@ int main(int ac, char **av)
 	if(ac != 2)
 	{
 		std::cerr << "Wrong argument number, you need exactly one file !" << std::endl;
-		return(1);
+		return 1;
 	}
+
+	std::string file_name = static_cast<std::string>(av[1]);
+
+	if(file_name.substr(file_name.length() - 5, file_name.length() - 1) != ".csv")
+	{
+		std::cerr << "Wrong file format." << std::endl;
+		return 0;
+	}
+
 	try
 	{
-			std::map<std::string, float> data = csv_parser(av[1]);
+			std::map<std::string, float> data = csv_parser(file_name);
 	}
 	catch(std::exception &e)
 	{
