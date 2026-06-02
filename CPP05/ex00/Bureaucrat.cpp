@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 18:42:33 by scesar            #+#    #+#             */
-/*   Updated: 2026/02/06 02:32:43 by stephen          ###   ########.fr       */
+/*   Updated: 2026/06/02 16:25:28 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Bureaucrat::Bureaucrat(): _name("Bob"), _grade(150){
 	std::cout << "We can all greet our new intern !" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &B): _name(B._name), _grade(B._grade){
+Bureaucrat::Bureaucrat(Bureaucrat const &B): _name(B._name), _grade(B._grade){
 	std::cout << "Wait, ther's two of you ?" << std::endl;
 }
 

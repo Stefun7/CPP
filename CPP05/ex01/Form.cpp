@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 22:43:27 by stephen           #+#    #+#             */
-/*   Updated: 2026/02/18 16:07:54 by stephen          ###   ########.fr       */
+/*   Updated: 2026/06/02 16:22:56 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Form::Form() : _name("Usual paperasse"), _gr_to_sign(150), _gr_to_exec(150), _is
 	std::cout << "Form created" << std::endl;
 }
 
-Form::Form(Form &F) : _name(F._name), _gr_to_sign(F._gr_to_sign), _gr_to_exec(F._gr_to_exec), _is_signed(false){
+Form::Form(const Form &F) : _name(F._name), _gr_to_sign(F._gr_to_sign), _gr_to_exec(F._gr_to_exec), _is_signed(false){
 	std::cout << "Form copied" << std::endl;
 }
 
@@ -42,10 +42,7 @@ Form::~Form(){
 
 Form& Form::operator=(Form const &F){
 	if(this != &F)
-	{
-		this->_gr_to_exec = F._gr_to_exec;
-		this->_gr_to_sign = F._gr_to_sign;
-	}
+		this->_is_signed = F._is_signed;
 	return *this;
 }
 

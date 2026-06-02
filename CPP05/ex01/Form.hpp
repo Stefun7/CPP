@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 00:59:34 by stephen           #+#    #+#             */
-/*   Updated: 2026/02/10 21:48:04 by stephen          ###   ########.fr       */
+/*   Updated: 2026/06/02 16:24:15 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Bureaucrat;
 class Form{
 public:
 	Form();
-	Form(Form &F);
+	Form(Form const &F);
 	Form(std::string name);
 	Form(std::string name, int gr_to_sign, int gr_to_exec);
 	~Form();
@@ -45,8 +45,8 @@ public:
 	};
 private:
 	std::string const _name;
-	int _gr_to_sign;
-	int _gr_to_exec;
+	int const _gr_to_sign;
+	int const _gr_to_exec;
 	bool _is_signed;
 };
 
