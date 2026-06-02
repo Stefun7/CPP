@@ -6,7 +6,7 @@
 /*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 15:03:34 by scesar            #+#    #+#             */
-/*   Updated: 2026/05/13 15:09:15 by scesar           ###   ########.fr       */
+/*   Updated: 2026/06/02 18:10:04 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,19 @@ std::map<std::string, float> csv_parser(std::string file_name){
 	while(getline(data, line))
 	{
 		// check_date()
+		std::string date = chech_date(line);
+		if (date == INVALID)
+			throw(WrongDateFormat());
+		float value;
 		// check_value()
 		// check_other() ?
 	}
 }
 
+std::string chech_date(std::string const &line){
+	size_t pos = line.find('-');
+	if(pos == std::string::npos)
+		return INVALID;
+}
 //official release of the bc : January 2009
+
