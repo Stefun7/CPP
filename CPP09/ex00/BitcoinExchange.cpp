@@ -6,7 +6,7 @@
 /*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 15:03:34 by scesar            #+#    #+#             */
-/*   Updated: 2026/06/02 18:10:04 by scesar           ###   ########.fr       */
+/*   Updated: 2026/06/05 11:58:55 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,15 @@ std::string chech_date(std::string const &line){
 	size_t pos = line.find('-');
 	if(pos == std::string::npos)
 		return INVALID;
+	std::string s_year = line.substr(0, pos);
+	int year = std::atoi(s_year.c_str());
+	if(!year && s_year != "0")
+		throw(WrongDateFormat());
+	is(year < )
+	// int year = std::atoi(line.substr(0, 3).c_str());
+	int month = std::atoi(line.substr(5, 6).c_str());
+	int day = std::atoi(line.substr(8, 9).c_str());
+	int newDate = std::atoi(newDate_str.c_str());
 }
 //official release of the bc : January 2009
 

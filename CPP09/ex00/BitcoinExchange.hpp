@@ -6,7 +6,7 @@
 /*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 17:18:02 by scesar            #+#    #+#             */
-/*   Updated: 2026/06/02 18:08:53 by scesar           ###   ########.fr       */
+/*   Updated: 2026/06/05 11:41:09 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,4 @@ public:
 	}
 };
 
+std::map<std::string, float> csv_parser(std::string);

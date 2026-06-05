@@ -6,7 +6,7 @@
 /*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 17:09:49 by scesar            #+#    #+#             */
-/*   Updated: 2026/05/13 14:20:45 by scesar           ###   ########.fr       */
+/*   Updated: 2026/06/05 11:40:14 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 int main(int ac, char **av)
 {
+	// std::string a = "---3a4";
+	// int b = std::atoi(a.c_str());
+
+	// std::cout << b << std::endl;
 	if(ac != 2)
 	{
 		std::cerr << "Wrong argument number, you need exactly one file !" << std::endl;

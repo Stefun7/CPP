@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:50:39 by stephen           #+#    #+#             */
-/*   Updated: 2026/03/18 14:12:17 by stephen          ###   ########.fr       */
+/*   Updated: 2026/06/05 13:19:44 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 # include <iostream>
-# include <cstdint>
+# include <stdint.h>
 # include "Data.hpp"
 
 class Serializer{

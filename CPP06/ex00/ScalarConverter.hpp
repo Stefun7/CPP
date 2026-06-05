@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 13:02:39 by stephen           #+#    #+#             */
-/*   Updated: 2026/03/18 14:11:16 by stephen          ###   ########.fr       */
+/*   Updated: 2026/06/05 12:38:24 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <cmath>
 # include <cctype>
 # include <iomanip>
-# include <limits>
+# include <limits.h>
 
 class ScalarConverter{
 public:

@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stephen <stephen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 13:49:49 by stephen           #+#    #+#             */
-/*   Updated: 2026/03/18 13:40:12 by stephen          ###   ########.fr       */
+/*   Updated: 2026/06/05 13:12:27 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+bool isChar(const std::string& lit){
+	return lit.length() == 1 && !std::isdigit(lit[0]);
+}
 
 bool isInt(const std::string &lit){
 	char *end;
@@ -30,12 +34,33 @@ bool isFloat(const std::string &lit){
 	char *end;
 	std::string n;
 
+	if (lit.length() < 2)
+		return false;
 	if (lit[lit.length() - 1] != 'f')
 		return false;
 	n = lit.substr(0, lit.length() - 1);
 	std::strtod(n.c_str(), &end);
 
 	return *end == '\0';
+}
+
+void treatChar(std::string lit){
+	char c = lit[0];
+
+	if (c < 0 || c > 127)
+		std::cout << "char: impossible" << std::endl;
+	else if (!std::isprint(c))
+		std::cout << "char: Non displayable" << std::endl;
+	else
+		std::cout << "char: '" << static_cast<char>(c) << "'" << std::endl;
+	std::cout << "int: " << static_cast<int>(c) << std::endl;
+
+	std::cout << std::fixed << std::setprecision(1);
+	//std::fixed to show decimal number
+	//std::setprecision(1) to show 1 digit after the decimal
+
+	std::cout << "float: " << static_cast<float>(c) << "f" << std::endl;
+	std::cout << "double: " << static_cast<double>(c) << std::endl;
 }
 
 void treatInt(std::string lit){
@@ -47,7 +72,7 @@ void treatInt(std::string lit){
 	else if (!std::isprint(n))
 		std::cout << "char: Non displayable" << std::endl;
 	else
-		std::cout << "char: '" << static_cast<char>(n) << std::endl;
+		std::cout << "char: '" << static_cast<char>(n) << "'" << std::endl;
 	if(n < INT_MIN || n > INT_MAX)
 		std::cout << "int: out of range" << std::endl;
 	else
@@ -71,7 +96,7 @@ void treatDouble(std::string lit){
 	else if (!std::isprint(m))
 		std::cout << "char: Non displayable" << std::endl;
 	else
-		std::cout << "char: '" << static_cast<char>(m) << "'\n";
+		std::cout << "char: '" << static_cast<char>(m) << "'" << std::endl;
 	if (std::isnan(n) || std::isinf(n))
 		std::cout << "int: impossible" << std::endl;
 	else
@@ -93,7 +118,7 @@ void treatFloat(std::string lit){
 	else if (!std::isprint(m))
 		std::cout << "char: Non displayable" << std::endl;
 	else
-		std::cout << "char: '" << static_cast<char>(m) << "'\n";
+		std::cout << "char: '" << static_cast<char>(m) << "'" << std::endl;
 	if (std::isnan(n) || std::isinf(n))
 		std::cout << "int: impossible" << std::endl;
 	else
@@ -107,8 +132,9 @@ void treatFloat(std::string lit){
 
 void ScalarConverter::convert(std::string lit){
 
-	//isChar ? t treat 'a' type inputs
-	if(isInt(lit))
+	if(isChar(lit))
+		treatChar(lit);
+	else if(isInt(lit))
 		treatInt(lit);
 	else if(isDouble(lit))
 		treatDouble(lit);
