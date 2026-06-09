@@ -6,7 +6,7 @@
 /*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 17:09:49 by scesar            #+#    #+#             */
-/*   Updated: 2026/06/05 11:40:14 by scesar           ###   ########.fr       */
+/*   Updated: 2026/06/09 17:32:18 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(int ac, char **av)
 {
-	// std::string a = "---3a4";
+	// std::string a = "01";
 	// int b = std::atoi(a.c_str());
 
 	// std::cout << b << std::endl;
@@ -26,7 +26,7 @@ int main(int ac, char **av)
 
 	std::string file_name = static_cast<std::string>(av[1]);
 
-	if(file_name.substr(file_name.length() - 5, file_name.length() - 1) != ".csv")
+	if(file_name.substr(file_name.length() - 4, file_name.length() - 1) != ".csv")
 	{
 		std::cerr << "Wrong file format." << std::endl;
 		return 0;
