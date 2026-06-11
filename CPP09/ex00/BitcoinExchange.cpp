@@ -6,7 +6,7 @@
 /*   By: scesar <scesar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 15:03:34 by scesar            #+#    #+#             */
-/*   Updated: 2026/06/09 18:40:51 by scesar           ###   ########.fr       */
+/*   Updated: 2026/06/11 18:53:21 by scesar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,63 @@ std::map<std::string, float> csv_parser(std::string file_name){
 	data.open(file_name.c_str());
 	if (!data.is_open())
 		throw(FileWontOpen());
+	char sep = NONE;
 	getline(data, line);
 	// if(line != "date,exchange_rate")
 	// 	std::cout << "Let's ignore that" << std::endl;
 	while(getline(data, line))
 	{
+		if(line.empty())
+			throw(EmptyLine());
 		std::string date = chech_date(line);
-		std::string value = check_value(line, date.size());
-		exit(1);
+		if(date.size() == line.size())
+			throw(NoValue());
+		size_t here = date.size();
+		while(line[here] == ' ')
+			here ++;
+		if(sep == NONE)
+			sep = line[here];
+		float value = check_value(line, here, sep);
+		data_map[date] = value;
+		// std::cout << date << " | " << value << std::endl;
+		// exit(1);
 	}
 	return data_map;
+}
+
+std::map<std::string, float> input_parser(std::map<std::string, float> data, std::string file_name){
+	//in construction
+	std::ifstream input;
+	std::map<std::string, float> res;
+	std::string line;
+
+	input.open(file_name.c_str());
+	if (!input.is_open())
+		throw(FileWontOpen());
+	char sep = '|';
+	getline(input, line);
+	// if(line != *date | value")
+	// 	std::cout << "Let's ignore that again" << std::endl;
+
+
+	//next step
+	while(getline(input, line))
+	{
+		if(line.empty())
+			throw(EmptyLine());
+		std::string date = chech_date(line);
+		if(date.size() == line.size())
+			throw(NoValue());
+		size_t here = date.size();
+		while(line[here] == ' ')
+			here ++;
+		if(sep == NONE)
+			sep = line[here];
+		float value = check_value(line, here, sep);
+		// std::cout << date << " | " << value << std::endl;
+		// exit(1);
+	}
+	return res;
 }
 
 std::string chech_date(std::string const &line){
@@ -98,14 +145,25 @@ bool day_exists(long l_year, long l_month, long l_day){
 }
 
 
-std::string check_value(std::string const &line, size_t here){
-	char sep = line[here];
+float check_value(std::string const &line, size_t here, char sep){
 	if(isalnum(sep))
 		throw(WrongSeparatorFormat());
+	if (line[here] != sep)
+		throw(WrongSeparatorFormat());
+	here++;
 	while(line[here] == ' ')
 		here ++;
-	sep = line[here];
-	while(line[here] == ' ')
-		here ++;
-	//next step
+	std::string value = line.substr(here, line.size() - (line.size() - here));
+	float l_value = atof(value.c_str());
+	for(size_t i = 0; i < value.size(); i++)
+	{
+		if(!isdigit(value[i]))
+		{
+			if(!(value[i] == '.' && i == (value.size() - 2)))
+				throw(WrongDateFormat());
+		}
+	}
+	if(l_value == 0 && value != "0")
+		throw(WrongValueFormat());
+	return l_value;
 }
